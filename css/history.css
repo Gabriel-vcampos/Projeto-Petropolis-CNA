@@ -1,0 +1,438 @@
+.dust-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .dust {
+            position: absolute;
+            background-color: rgba(212, 175, 55, 0.4);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-dust linear infinite;
+        }
+
+        @keyframes float-dust {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.4;
+            }
+            75% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        .history-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .scrolls-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .scroll {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.8s ease;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Pergaminho fechado */
+        .scroll-closed {
+            height: 140px;
+            perspective: 1000px;
+        }
+
+        .scroll-closed-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, #d4c19c, #e6d7b8, #d4c19c);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #a38d5d;
+        }
+
+        .scroll-closed-inner::before,
+        .scroll-closed-inner::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 40px;
+            background: linear-gradient(to right, #a38d5d, #c4b080);
+            border-radius: 5px;
+        }
+
+        .scroll-closed-inner::before {
+            left: 0;
+            box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-closed-inner::after {
+            right: 0;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #3a2e1c;
+            text-align: center;
+            z-index: 10;
+            padding: 0 60px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .scroll-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .imperial-seal {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            right: 40px;
+            top: 35px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23a38d5d' stroke='%23d4b364' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='40' fill='%23d4b364' stroke='%23a38d5d' stroke-width='1'/%3E%3Cpath d='M50 20 L55 40 L75 40 L60 55 L65 75 L50 65 L35 75 L40 55 L25 40 L45 40 Z' fill='%23a38d5d'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23a38d5d' stroke='%23d4b364' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+            z-index: 20;
+            transition: all 0.5s ease;
+        }
+
+        .imperial-ribbon {
+            position: absolute;
+            width: 30px;
+            height: 120px;
+            right: 60px;
+            top: 70px;
+            background: linear-gradient(to bottom, #1c5f2c, #2d8e44);
+            transform: rotate(15deg);
+            z-index: 15;
+            transition: all 0.5s ease;
+        }
+
+        .imperial-ribbon::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 30px;
+            height: 40px;
+            background: linear-gradient(to bottom, #2d8e44, #1c5f2c);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .scroll-open .imperial-seal,
+        .scroll-open .imperial-ribbon {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .scroll-border-pattern {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(163, 141, 93, 0.3);
+            pointer-events: none;
+        }
+
+        .scroll-border-pattern::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid rgba(163, 141, 93, 0.2);
+        }
+
+        .scroll-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #a38d5d;
+        }
+
+        .scroll-corner-tl {
+            top: 5px;
+            left: 5px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .scroll-corner-tr {
+            top: 5px;
+            right: 5px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .scroll-corner-bl {
+            bottom: 5px;
+            left: 5px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .scroll-corner-br {
+            bottom: 5px;
+            right: 5px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Pergaminho aberto */
+        .scroll-open {
+            height: 600px;
+            transition: height 0.8s ease;
+        }
+
+        .scroll-open-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom, #e6d7b8, #f5ebd0);
+            border-radius: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #a38d5d;
+        }
+
+        .scroll-header {
+            background: linear-gradient(to right, #d4c19c, #e6d7b8, #d4c19c);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #a38d5d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-icon {
+            transition: transform 0.5s ease;
+        }
+
+        .scroll-open .scroll-icon {
+            transform: rotate(180deg);
+        }
+
+        .scroll-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            background-image: 
+                linear-gradient(rgba(163, 141, 93, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(163, 141, 93, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            position: relative;
+        }
+
+        .scroll-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a38d5d' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .scroll-image-container {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 2rem;
+            border: 8px solid #a38d5d;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            background: #f5ebd0;
+        }
+
+        .scroll-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scroll-text {
+            font-size: 1.2rem;
+            color: #3a2e1c;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-text::first-letter {
+            font-size: 2.5rem;
+            font-family: 'Tangerine', cursive;
+            color: #a38d5d;
+            float: left;
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        .scroll-edges {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .scroll-edge-left,
+        .scroll-edge-right {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to right, #a38d5d, #c4b080);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .scroll-edge-left {
+            left: 0;
+            border-radius: 5px 0 0 5px;
+            transform-origin: left center;
+        }
+
+        .scroll-edge-right {
+            right: 0;
+            border-radius: 0 5px 5px 0;
+            transform-origin: right center;
+        }
+
+        .scroll-closed .scroll-edge-left {
+            transform: rotateY(0deg);
+        }
+
+        .scroll-closed .scroll-edge-right {
+            transform: rotateY(0deg);
+        }
+
+        .scroll-open .scroll-edge-left {
+            transform: rotateY(-30deg);
+        }
+
+        .scroll-open .scroll-edge-right {
+            transform: rotateY(30deg);
+        }
+
+        .imperial-emblem {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23a38d5d' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23a38d5d' stroke-width='1'/%3E%3Cpath d='M50 20 L55 40 L75 40 L60 55 L65 75 L50 65 L35 75 L40 55 L25 40 L45 40 Z' fill='%23a38d5d'/%3E%3Ccircle cx='50' cy='50' r='10' fill='none' stroke='%23a38d5d' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .date-stamp {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-family: 'Tangerine', cursive;
+            font-size: 1rem;
+            color: rgba(163, 141, 93, 0.7);
+            transform: rotate(-5deg);
+        }
+
+        .imperial-signature {
+            font-family: 'Tangerine', cursive;
+            font-size: 1rem;
+            color: #3a2e1c;
+            align-self: flex-end;
+            margin-right: 50px;
+            margin-top: 20px;
+            transform: rotate(-10deg);
+        }
+
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 3.5rem;
+            }
+            
+            .scroll-title {
+                font-size: 1.4rem;
+            }
+            
+            .scroll-closed {
+                height: 120px;
+            }
+            
+            .scroll-open {
+                height: 500px;
+            }
+            
+            .scroll-image-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .scroll-text {
+                font-size: 1rem;
+            }
+            
+            .imperial-seal {
+                width: 50px;
+                height: 50px;
+                right: 30px;
+                top: 35px;
+            }
+            
+            .imperial-ribbon {
+                width: 20px;
+                height: 100px;
+                right: 45px;
+            }
+        }

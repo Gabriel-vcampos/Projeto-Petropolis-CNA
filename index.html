@@ -8,81 +8,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="stylesheet" href="css/culinary.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      background: linear-gradient(to bottom, #000000, #111111, #1a1a1a);
-    }
-    .title-font {
-      font-family: 'Playfair Display SC', serif;
-    }
-    .subtitle-font {
-      font-family: 'Ink Free', cursive;
-    }
-    .text-3d-shadow {
-      color: white;
-      position: relative;
-      text-shadow:
-        2px 2px 0 #000,
-        4px 4px 0 #555,
-        6px 6px 0 rgba(0, 0, 0, 0.4);
-    }
-    .particle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.35);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 25;
-      opacity: 0.3;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .floating-food {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: floatFood 20s linear infinite;
-      opacity: 0.15;
-      pointer-events: none;
-      z-index: -1;
-    }
-    @keyframes floatFood {
-      0% { transform: translateY(100vh) translateX(0); }
-      100% { transform: translateY(-100vh) translateX(50vw); }
-    }
-    .floating-history {
-    position: absolute;
-    border-radius: 50%;
-    background-color: #fff5;
-    opacity: 0.1;
-    pointer-events: none;
-    animation: floatDust 30s linear infinite;
-    z-index: 0;
-  }
+      background: linear-gradient(to bottom, #000000, #0a0a0a, #111111, #151515, #1a1a1a);
 
-  .open-scroll {
-    transform: scaleY(0.8) rotateX(90deg);
-    transform-origin: top;
-    transition: transform 1s ease;
-    opacity: 0;
-  }
-
-  .open-scroll.open {
-    transform: scaleY(1) rotateX(0deg);
-    opacity: 1;
-  }
+    }
   </style>
 </head>
 
@@ -125,10 +62,14 @@
   </section>
 
   <!-- Cuisine Section -->
-  <section id="cuisine" class="relative z-10 bg-[#0d0d0d] text-gray-200 py-20 px-6 overflow-hidden">
+  <section id="cuisine" class="relative z-10 text-gray-200 py-20 px-6 overflow-hidden"
+  style="background: linear-gradient(to bottom, #0e0e0e, #161616);">
+  <div class="dust-particles"></div>
+
+
     <div id="food-animation"></div>
     <div class="max-w-6xl mx-auto text-center fade-in">
-      <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">CULINÁRIA | GASTRONOMY</h2>
+      <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">CULINARY</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="utensils" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
@@ -149,124 +90,203 @@
     </div>
   </section>
 
-<!-- History Section -->
-<section id="history" class="relative z-10 bg-[#1c1c1c] text-gray-200 py-24 px-6 overflow-hidden">
-  <div id="history-particles"></div>
-  <div class="max-w-6xl mx-auto text-center fade-in">
-    <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">HISTÓRIA | HISTORY</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-      <!-- Card 1 -->
-      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
-        <img src="assets/paper-texture.png" alt="Período Imperial" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
-        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
-          <i data-lucide="crown" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
-          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Período Imperial</h3>
-          <p class="text-sm text-[#4d3e2a] text-center">Dom Pedro II usava a cidade como residência de verão.</p>
+  <!-- History Section -->
+<section id="history" class="relative z-10 text-gray-200 py-24 px-6 overflow-hidden"
+  style="background: linear-gradient(to bottom, #161616, #1d1d1d);">
+
+  <div class="dust-particles"></div>
+  
+  <div class="history-section">
+        <h1 class="text-4xl font-bold title-font text-center mb-10 text-[#D4AF37]">HISTORY</h1>
+        
+        <div class="scrolls-container">
+            <!-- Pergaminho 1 -->
+            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+                <div class="scroll-closed-inner">
+                    <div class="scroll-border-pattern">
+                        <div class="scroll-corner scroll-corner-tl"></div>
+                        <div class="scroll-corner scroll-corner-tr"></div>
+                        <div class="scroll-corner scroll-corner-bl"></div>
+                        <div class="scroll-corner scroll-corner-br"></div>
+                    </div>
+                    <div class="scroll-title">Imperial Foundation</div>
+                    <div class="imperial-seal"></div>
+                    <div class="imperial-ribbon"></div>
+                </div>
+                <div class="scroll-open-inner" style="display: none;">
+                    <div class="scroll-header">
+                        <div class="scroll-title">Imperial Foundation</div>
+                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="scroll-content">
+                        <div class="imperial-emblem"></div>
+                        <div class="scroll-image-container">
+                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#f5ebd0" />
+                                <!-- Palácio Imperial -->
+                                <rect x="40" y="70" width="120" height="80" fill="#a38d5d" />
+                                <rect x="85" y="30" width="30" height="40" fill="#a38d5d" />
+                                <path d="M30 70 L100 30 L170 70" fill="none" stroke="#3a2e1c" stroke-width="2" />
+                                <!-- Janelas -->
+                                <rect x="50" y="80" width="15" height="25" fill="#3a2e1c" />
+                                <rect x="75" y="80" width="15" height="25" fill="#3a2e1c" />
+                                <rect x="110" y="80" width="15" height="25" fill="#3a2e1c" />
+                                <rect x="135" y="80" width="15" height="25" fill="#3a2e1c" />
+                                <!-- Porta -->
+                                <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
+                                <!-- Bandeira Imperial -->
+                                <rect x="95" y="20" width="10" height="10" fill="#1c5f2c" />
+                                <circle cx="100" cy="25" r="3" fill="#d4b364" />
+                            </svg>
+                        </div>
+                        <p class="scroll-text">Petrópolis, the "Imperial City", was founded by order of Dom Pedro II on March 16, 1843. The emperor, seeking refuge from the intense heat of Rio de Janeiro, chose the lands of the former Córrego Seco Farm to build his summer palace and an agricultural colony.</p>
+                        <div class="imperial-signature">Dom Pedro II</div>
+                        <div class="date-stamp">1843</div>
+                    </div>
+                    <div class="scroll-edges">
+                        <div class="scroll-edge-left"></div>
+                        <div class="scroll-edge-right"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pergaminho 2 -->
+            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+                <div class="scroll-closed-inner">
+                    <div class="scroll-border-pattern">
+                        <div class="scroll-corner scroll-corner-tl"></div>
+                        <div class="scroll-corner scroll-corner-tr"></div>
+                        <div class="scroll-corner scroll-corner-bl"></div>
+                        <div class="scroll-corner scroll-corner-br"></div>
+                    </div>
+                    <div class="scroll-title">Imperial Apogee</div>
+                    <div class="imperial-seal"></div>
+                    <div class="imperial-ribbon"></div>
+                </div>
+                <div class="scroll-open-inner" style="display: none;">
+                    <div class="scroll-header">
+                        <div class="scroll-title">Imperial Apogee</div>
+                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="scroll-content">
+                        <div class="imperial-emblem"></div>
+                        <div class="scroll-image-container">
+                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#f5ebd0" />
+                                <!-- Salão de baile -->
+                                <rect x="30" y="50" width="140" height="100" fill="#d4c19c" />
+                                <!-- Colunas -->
+                                <rect x="40" y="50" width="10" height="100" fill="#a38d5d" />
+                                <rect x="80" y="50" width="10" height="100" fill="#a38d5d" />
+                                <rect x="120" y="50" width="10" height="100" fill="#a38d5d" />
+                                <rect x="160" y="50" width="10" height="100" fill="#a38d5d" />
+                                <!-- Teto ornamentado -->
+                                <path d="M30 50 Q100 30 170 50" fill="none" stroke="#3a2e1c" stroke-width="2" />
+                                <!-- Lustre -->
+                                <path d="M100 30 L100 60" stroke="#a38d5d" stroke-width="2" />
+                                <circle cx="100" cy="70" r="10" fill="none" stroke="#a38d5d" stroke-width="1" />
+                                <!-- Figuras dançando -->
+                                <circle cx="70" cy="120" r="8" fill="#3a2e1c" />
+                                <rect x="67" y="128" width="6" height="15" fill="#3a2e1c" />
+                                <circle cx="90" cy="120" r="8" fill="#8c2c2c" />
+                                <path d="M90 128 L90 143" stroke="#8c2c2c" stroke-width="6" />
+                                <circle cx="130" cy="120" r="8" fill="#3a2e1c" />
+                                <rect x="127" y="128" width="6" height="15" fill="#3a2e1c" />
+                                <circle cx="150" cy="120" r="8" fill="#8c2c2c" />
+                                <path d="M150 128 L150 143" stroke="#8c2c2c" stroke-width="6" />
+                            </svg>
+                        </div>
+                        <p class="scroll-text">During the Second Empire, Petrópolis reached its peak as the political and cultural center of the Empire. The Imperial Palace became the official summer residence of the royal family, attracting the country's political and aristocratic elite. The city was known as the "Brazilian Versailles" due to its sophistication.</p>
+                        <div class="imperial-signature">Princess Isabel</div>
+                        <div class="date-stamp">1870</div>
+                    </div>
+                    <div class="scroll-edges">
+                        <div class="scroll-edge-left"></div>
+                        <div class="scroll-edge-right"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pergaminho 3 -->
+            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+                <div class="scroll-closed-inner">
+                    <div class="scroll-border-pattern">
+                        <div class="scroll-corner scroll-corner-tl"></div>
+                        <div class="scroll-corner scroll-corner-tr"></div>
+                        <div class="scroll-corner scroll-corner-bl"></div>
+                        <div class="scroll-corner scroll-corner-br"></div>
+                    </div>
+                    <div class="scroll-title">Contemporary Petropolis</div>
+                    <div class="imperial-seal"></div>
+                    <div class="imperial-ribbon"></div>
+                </div>
+                <div class="scroll-open-inner" style="display: none;">
+                    <div class="scroll-header">
+                        <div class="scroll-title">Contemporary Petropolis</div>
+                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="scroll-content">
+                        <div class="imperial-emblem"></div>
+                        <div class="scroll-image-container">
+                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100%" height="100%" fill="#f5ebd0" />
+                                <!-- Catedral de São Pedro de Alcântara -->
+                                <rect x="60" y="60" width="80" height="90" fill="#d4c19c" />
+                                <path d="M60 60 L100 30 L140 60" fill="#a38d5d" />
+                                <!-- Torres -->
+                                <rect x="70" y="40" width="10" height="30" fill="#a38d5d" />
+                                <path d="M70 40 L75 30 L80 40" fill="#a38d5d" />
+                                <rect x="120" y="40" width="10" height="30" fill="#a38d5d" />
+                                <path d="M120 40 L125 30 L130 40" fill="#a38d5d" />
+                                <!-- Porta e janelas -->
+                                <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
+                                <path d="M90 110 L100 100 L110 110" fill="#3a2e1c" />
+                                <rect x="70" y="80" width="15" height="20" fill="#3a2e1c" />
+                                <path d="M70 80 L77.5 70 L85 80" fill="#3a2e1c" />
+                                <rect x="115" y="80" width="15" height="20" fill="#3a2e1c" />
+                                <path d="M115 80 L122.5 70 L130 80" fill="#3a2e1c" />
+                                <!-- Praça -->
+                                <rect x="40" y="150" width="120" height="20" fill="#a38d5d" />
+                                <!-- Pessoas -->
+                                <circle cx="60" cy="160" r="3" fill="#3a2e1c" />
+                                <circle cx="70" cy="160" r="3" fill="#8c2c2c" />
+                                <circle cx="130" cy="160" r="3" fill="#3a2e1c" />
+                                <circle cx="140" cy="160" r="3" fill="#8c2c2c" />
+                            </svg>
+                        </div>
+                        <p class="scroll-text">Today, Petrópolis keeps its historical heritage alive while developing as an important tourist, technological and educational center. The Historic Center, listed by IPHAN, preserves the original layout and buildings from the imperial period, attracting visitors from all over the world.</p>
+                        <div class="imperial-signature">Municipal Registry Office</div>
+                        <div class="date-stamp">2023</div>
+                    </div>
+                    <div class="scroll-edges">
+                        <div class="scroll-edge-left"></div>
+                        <div class="scroll-edge-right"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
-        <img src="assets/paper-texture.png" alt="Cultura Alemã" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
-        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
-          <i data-lucide="scroll-text" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
-          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Cultura Alemã</h3>
-          <p class="text-sm text-[#4d3e2a] text-center">Imigrantes alemães influenciaram a arquitetura e culinária.</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
-        <img src="assets/paper-texture.png" alt="Herança Arquitetônica" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
-        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
-          <i data-lucide="building-2" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
-          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Herança Arquitetônica</h3>
-          <p class="text-sm text-[#4d3e2a] text-center">Casarões, palácios e ruas que lembram a Europa do século XIX.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
 
+
+
+
+
+<script src="js/culinary.js"></script>
+<script src="js/history.js"></script>
   <script>
     lucide.createIcons();
-
-    const foodContainer = document.getElementById("food-animation");
-    const foodEmojis = ['\uD83C\uDF7D️', '\uD83C\uDF54', '\uD83C\uDF5D', '\uD83E\uDD5C', '\uD83E\uDD57'];
-
-    for (let i = 0; i < 20; i++) {
-      const el = document.createElement("div");
-      el.className = "floating-food";
-      el.style.left = `${Math.random() * 100}%`;
-      el.style.top = `${Math.random() * 100}%`;
-      el.style.fontSize = `${Math.random() * 20 + 20}px`;
-      el.textContent = foodEmojis[Math.floor(Math.random() * foodEmojis.length)];
-      foodContainer.appendChild(el);
-    }
-
-    const faders = document.querySelectorAll('.fade-in');
-
-    function triggerAnimation(element) {
-      element.classList.remove('show');
-      void element.offsetWidth;
-      setTimeout(() => {
-        element.classList.add('show');
-      }, 10);
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          triggerAnimation(entry.target);
-        } else {
-          entry.target.classList.remove('show');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    faders.forEach(fader => observer.observe(fader));
-
-
-    const historyContainer = document.getElementById("history-particles");
-  for (let i = 0; i < 20; i++) {
-    const dot = document.createElement("div");
-    dot.className = "floating-history";
-    dot.style.left = `${Math.random() * 100}%`;
-    dot.style.top = `${Math.random() * 100}%`;
-    dot.style.width = `${Math.random() * 10 + 5}px`;
-    dot.style.height = dot.style.width;
-    dot.style.backgroundColor = `rgba(255, 248, 220, ${Math.random() * 0.2 + 0.1})`;
-    dot.style.animationDuration = `${20 + Math.random() * 20}s`;
-    historyContainer.appendChild(dot);
-  }
-
-  // Scroll observer for opening animation
-  const openCards = document.querySelectorAll('.open-scroll');
-  const openObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('open');
-      } else {
-        entry.target.classList.remove('open');
-      }
-    });
-  }, { threshold: 0.4 });
-
-  openCards.forEach(card => openObserver.observe(card));
   </script>
 
-  <style>
-    @keyframes floatDust {
-      0% { transform: translate(0, 0); opacity: 0.1; }
-      20% { opacity: 0.3; }
-      50% { transform: translate(50px, -30px); opacity: 0.5; }
-      80% { opacity: 0.3; }
-      100% { transform: translate(100px, -60px); opacity: 0.1; }
-    }
-  </style>
+  
 </body>
 
 </html>

@@ -1,0 +1,14 @@
+.title-font {
+      font-family: 'Playfair Display SC', serif;
+    }
+    .subtitle-font {
+      font-family: 'Ink Free', cursive;
+    }
+    .text-3d-shadow {
+      color: white;
+      position: relative;
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 0 #555,
+        6px 6px 0 rgba(0, 0, 0, 0.4);
+    }
