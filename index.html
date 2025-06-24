@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Petrópolis</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/history.css">
   <link rel="stylesheet" href="css/banner.css">
   <link rel="stylesheet" href="css/culinary.css">
+  <link rel="stylesheet" href="css/tourism.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -51,40 +53,53 @@
   <!-- Banner Hero -->
   <section id="home" class="relative h-screen w-full overflow-hidden">
     <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
-      <source src="assets/video-petropolis.mp4" type="video/mp4" />
+      <source src="assets/video/video-petropolis.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-20"></div>
     <div class="relative z-30 flex items-center justify-center flex-col h-full text-center px-4 -mt-12">
-      <h1 class="text-6xl md:text-[5rem] font-bold title-font uppercase tracking-widest mb-4 text-3d-shadow">PETRÓPOLIS</h1>
-      <p class="text-white text-lg md:text-base font-extrabold uppercase tracking-wider mb-10" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">- A CITY IN RIO DE JANEIRO -</p>
+      <h1 class="text-6xl md:text-[5rem] font-bold title-font uppercase tracking-widest mb-4 text-3d-shadow">PETRÓPOLIS
+      </h1>
+      <p class="text-white text-lg md:text-base font-extrabold uppercase tracking-wider mb-10"
+        style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">- A CITY IN RIO DE JANEIRO -</p>
     </div>
   </section>
 
   <!-- Cuisine Section -->
   <section id="cuisine" class="relative z-10 text-gray-200 py-20 px-6 overflow-hidden"
-  style="background: linear-gradient(to bottom, #0e0e0e, #161616);">
-  <div class="dust-particles"></div>
+    style="background: linear-gradient(to bottom, #0e0e0e, #161616);">
+    <div class="dust-particles"></div>
 
 
     <div id="food-animation"></div>
     <div class="max-w-6xl mx-auto text-center fade-in">
       <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">CULINARY</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div
+          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="utensils" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
-          <h3 class="text-xl font-semibold mb-2">Pratos Salgados</h3>
-          <p class="text-sm text-gray-400">Joelho de porco, salsichas, truta e fondue no inverno.</p>
+          <h3 class="text-xl font-semibold mb-2">Traditional Dishes</h3>
+          <p class="text-sm text-gray-400">Eisbein is a pork knee.
+            Bratwurst and Weisswurst that are German sausages.
+            fondue and
+            trout</p>
         </div>
-        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div
+          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="cake" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
-          <h3 class="text-xl font-semibold mb-2">Doces & Sobremesas</h3>
-          <p class="text-sm text-gray-400">Apfelstrudel, chocolates e bolos alemães.</p>
+          <h3 class="text-xl font-semibold mb-2">Sweets and Desserts</h3>
+          <p class="text-sm text-gray-400">Apfelstrudel,
+            Black forest,
+            Custard,
+            Handmade Chocolates</p>
         </div>
-        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div
+          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="wine" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
-          <h3 class="text-xl font-semibold mb-2">Bebidas & Festas</h3>
-          <p class="text-sm text-gray-400">Cervejas artesanais, chá imperial e Bauernfest.</p>
+          <h3 class="text-xl font-semibold mb-2">Common drinks</h3>
+          <p class="text-sm text-gray-400">Imperial afternoon tea,
+            craft beers,
+            hot chocolate on cold days</p>
         </div>
       </div>
     </div>
@@ -92,201 +107,277 @@
 
 
   <!-- History Section -->
-<section id="history" class="relative z-10 text-gray-200 py-24 px-6 overflow-hidden"
-  style="background: linear-gradient(to bottom, #161616, #1d1d1d);">
+  <section id="history" class="relative z-10 text-gray-200 py-24 px-6 overflow-hidden"
+    style="background: linear-gradient(to bottom, #161616, #1d1d1d);">
+    <div class="dust-particles"></div>
 
-  <div class="dust-particles"></div>
-  
-  <div class="history-section">
-        <h1 class="text-4xl font-bold title-font text-center mb-10 text-[#D4AF37]">HISTORY</h1>
-        
-        <div class="scrolls-container">
-            <!-- Pergaminho 1 -->
-            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
-                <div class="scroll-closed-inner">
-                    <div class="scroll-border-pattern">
-                        <div class="scroll-corner scroll-corner-tl"></div>
-                        <div class="scroll-corner scroll-corner-tr"></div>
-                        <div class="scroll-corner scroll-corner-bl"></div>
-                        <div class="scroll-corner scroll-corner-br"></div>
-                    </div>
-                    <div class="scroll-title">Imperial Foundation</div>
-                    <div class="imperial-seal"></div>
-                    <div class="imperial-ribbon"></div>
-                </div>
-                <div class="scroll-open-inner" style="display: none;">
-                    <div class="scroll-header">
-                        <div class="scroll-title">Imperial Foundation</div>
-                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="scroll-content">
-                        <div class="imperial-emblem"></div>
-                        <div class="scroll-image-container">
-                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100%" height="100%" fill="#f5ebd0" />
-                                <!-- Palácio Imperial -->
-                                <rect x="40" y="70" width="120" height="80" fill="#a38d5d" />
-                                <rect x="85" y="30" width="30" height="40" fill="#a38d5d" />
-                                <path d="M30 70 L100 30 L170 70" fill="none" stroke="#3a2e1c" stroke-width="2" />
-                                <!-- Janelas -->
-                                <rect x="50" y="80" width="15" height="25" fill="#3a2e1c" />
-                                <rect x="75" y="80" width="15" height="25" fill="#3a2e1c" />
-                                <rect x="110" y="80" width="15" height="25" fill="#3a2e1c" />
-                                <rect x="135" y="80" width="15" height="25" fill="#3a2e1c" />
-                                <!-- Porta -->
-                                <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
-                                <!-- Bandeira Imperial -->
-                                <rect x="95" y="20" width="10" height="10" fill="#1c5f2c" />
-                                <circle cx="100" cy="25" r="3" fill="#d4b364" />
-                            </svg>
-                        </div>
-                        <p class="scroll-text">Petrópolis, the "Imperial City", was founded by order of Dom Pedro II on March 16, 1843. The emperor, seeking refuge from the intense heat of Rio de Janeiro, chose the lands of the former Córrego Seco Farm to build his summer palace and an agricultural colony.</p>
-                        <div class="imperial-signature">Dom Pedro II</div>
-                        <div class="date-stamp">1843</div>
-                    </div>
-                    <div class="scroll-edges">
-                        <div class="scroll-edge-left"></div>
-                        <div class="scroll-edge-right"></div>
-                    </div>
-                </div>
+    <div class="history-section">
+      <h1 class="text-4xl font-bold title-font text-center mb-10 text-[#D4AF37]">HISTORY</h1>
+
+      <div class="scrolls-container">
+        <!-- Pergaminho 1 -->
+        <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+          <div class="scroll-closed-inner">
+            <div class="scroll-border-pattern">
+              <div class="scroll-corner scroll-corner-tl"></div>
+              <div class="scroll-corner scroll-corner-tr"></div>
+              <div class="scroll-corner scroll-corner-bl"></div>
+              <div class="scroll-corner scroll-corner-br"></div>
             </div>
-            
-            <!-- Pergaminho 2 -->
-            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
-                <div class="scroll-closed-inner">
-                    <div class="scroll-border-pattern">
-                        <div class="scroll-corner scroll-corner-tl"></div>
-                        <div class="scroll-corner scroll-corner-tr"></div>
-                        <div class="scroll-corner scroll-corner-bl"></div>
-                        <div class="scroll-corner scroll-corner-br"></div>
-                    </div>
-                    <div class="scroll-title">Imperial Apogee</div>
-                    <div class="imperial-seal"></div>
-                    <div class="imperial-ribbon"></div>
-                </div>
-                <div class="scroll-open-inner" style="display: none;">
-                    <div class="scroll-header">
-                        <div class="scroll-title">Imperial Apogee</div>
-                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="scroll-content">
-                        <div class="imperial-emblem"></div>
-                        <div class="scroll-image-container">
-                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100%" height="100%" fill="#f5ebd0" />
-                                <!-- Salão de baile -->
-                                <rect x="30" y="50" width="140" height="100" fill="#d4c19c" />
-                                <!-- Colunas -->
-                                <rect x="40" y="50" width="10" height="100" fill="#a38d5d" />
-                                <rect x="80" y="50" width="10" height="100" fill="#a38d5d" />
-                                <rect x="120" y="50" width="10" height="100" fill="#a38d5d" />
-                                <rect x="160" y="50" width="10" height="100" fill="#a38d5d" />
-                                <!-- Teto ornamentado -->
-                                <path d="M30 50 Q100 30 170 50" fill="none" stroke="#3a2e1c" stroke-width="2" />
-                                <!-- Lustre -->
-                                <path d="M100 30 L100 60" stroke="#a38d5d" stroke-width="2" />
-                                <circle cx="100" cy="70" r="10" fill="none" stroke="#a38d5d" stroke-width="1" />
-                                <!-- Figuras dançando -->
-                                <circle cx="70" cy="120" r="8" fill="#3a2e1c" />
-                                <rect x="67" y="128" width="6" height="15" fill="#3a2e1c" />
-                                <circle cx="90" cy="120" r="8" fill="#8c2c2c" />
-                                <path d="M90 128 L90 143" stroke="#8c2c2c" stroke-width="6" />
-                                <circle cx="130" cy="120" r="8" fill="#3a2e1c" />
-                                <rect x="127" y="128" width="6" height="15" fill="#3a2e1c" />
-                                <circle cx="150" cy="120" r="8" fill="#8c2c2c" />
-                                <path d="M150 128 L150 143" stroke="#8c2c2c" stroke-width="6" />
-                            </svg>
-                        </div>
-                        <p class="scroll-text">During the Second Empire, Petrópolis reached its peak as the political and cultural center of the Empire. The Imperial Palace became the official summer residence of the royal family, attracting the country's political and aristocratic elite. The city was known as the "Brazilian Versailles" due to its sophistication.</p>
-                        <div class="imperial-signature">Princess Isabel</div>
-                        <div class="date-stamp">1870</div>
-                    </div>
-                    <div class="scroll-edges">
-                        <div class="scroll-edge-left"></div>
-                        <div class="scroll-edge-right"></div>
-                    </div>
-                </div>
+            <div class="scroll-title">Imperial Foundation</div>
+            <div class="imperial-seal"></div>
+            <div class="imperial-ribbon"></div>
+          </div>
+          <div class="scroll-open-inner" style="display: none;">
+            <div class="scroll-header">
+              <div class="scroll-title">Imperial Foundation</div>
+              <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </div>
-            
-            <!-- Pergaminho 3 -->
-            <div class="scroll scroll-closed" onclick="toggleScroll(this)">
-                <div class="scroll-closed-inner">
-                    <div class="scroll-border-pattern">
-                        <div class="scroll-corner scroll-corner-tl"></div>
-                        <div class="scroll-corner scroll-corner-tr"></div>
-                        <div class="scroll-corner scroll-corner-bl"></div>
-                        <div class="scroll-corner scroll-corner-br"></div>
-                    </div>
-                    <div class="scroll-title">Contemporary Petropolis</div>
-                    <div class="imperial-seal"></div>
-                    <div class="imperial-ribbon"></div>
-                </div>
-                <div class="scroll-open-inner" style="display: none;">
-                    <div class="scroll-header">
-                        <div class="scroll-title">Contemporary Petropolis</div>
-                        <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="scroll-content">
-                        <div class="imperial-emblem"></div>
-                        <div class="scroll-image-container">
-                            <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="100%" height="100%" fill="#f5ebd0" />
-                                <!-- Catedral de São Pedro de Alcântara -->
-                                <rect x="60" y="60" width="80" height="90" fill="#d4c19c" />
-                                <path d="M60 60 L100 30 L140 60" fill="#a38d5d" />
-                                <!-- Torres -->
-                                <rect x="70" y="40" width="10" height="30" fill="#a38d5d" />
-                                <path d="M70 40 L75 30 L80 40" fill="#a38d5d" />
-                                <rect x="120" y="40" width="10" height="30" fill="#a38d5d" />
-                                <path d="M120 40 L125 30 L130 40" fill="#a38d5d" />
-                                <!-- Porta e janelas -->
-                                <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
-                                <path d="M90 110 L100 100 L110 110" fill="#3a2e1c" />
-                                <rect x="70" y="80" width="15" height="20" fill="#3a2e1c" />
-                                <path d="M70 80 L77.5 70 L85 80" fill="#3a2e1c" />
-                                <rect x="115" y="80" width="15" height="20" fill="#3a2e1c" />
-                                <path d="M115 80 L122.5 70 L130 80" fill="#3a2e1c" />
-                                <!-- Praça -->
-                                <rect x="40" y="150" width="120" height="20" fill="#a38d5d" />
-                                <!-- Pessoas -->
-                                <circle cx="60" cy="160" r="3" fill="#3a2e1c" />
-                                <circle cx="70" cy="160" r="3" fill="#8c2c2c" />
-                                <circle cx="130" cy="160" r="3" fill="#3a2e1c" />
-                                <circle cx="140" cy="160" r="3" fill="#8c2c2c" />
-                            </svg>
-                        </div>
-                        <p class="scroll-text">Today, Petrópolis keeps its historical heritage alive while developing as an important tourist, technological and educational center. The Historic Center, listed by IPHAN, preserves the original layout and buildings from the imperial period, attracting visitors from all over the world.</p>
-                        <div class="imperial-signature">Municipal Registry Office</div>
-                        <div class="date-stamp">2023</div>
-                    </div>
-                    <div class="scroll-edges">
-                        <div class="scroll-edge-left"></div>
-                        <div class="scroll-edge-right"></div>
-                    </div>
-                </div>
+            <div class="scroll-content">
+              <div class="imperial-emblem"></div>
+              <div class="scroll-image-container">
+                <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100%" height="100%" fill="#f5ebd0" />
+                  <!-- Palácio Imperial -->
+                  <rect x="40" y="70" width="120" height="80" fill="#a38d5d" />
+                  <rect x="85" y="30" width="30" height="40" fill="#a38d5d" />
+                  <path d="M30 70 L100 30 L170 70" fill="none" stroke="#3a2e1c" stroke-width="2" />
+                  <!-- Janelas -->
+                  <rect x="50" y="80" width="15" height="25" fill="#3a2e1c" />
+                  <rect x="75" y="80" width="15" height="25" fill="#3a2e1c" />
+                  <rect x="110" y="80" width="15" height="25" fill="#3a2e1c" />
+                  <rect x="135" y="80" width="15" height="25" fill="#3a2e1c" />
+                  <!-- Porta -->
+                  <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
+                  <!-- Bandeira Imperial -->
+                  <rect x="95" y="20" width="10" height="10" fill="#1c5f2c" />
+                  <circle cx="100" cy="25" r="3" fill="#d4b364" />
+                </svg>
+              </div>
+              <p class="scroll-text">Petrópolis, the "Imperial City", was founded by order of Dom Pedro II on March 16,
+                1843. The emperor, seeking refuge from the intense heat of Rio de Janeiro, chose the lands of the former
+                Córrego Seco Farm to build his summer palace and an agricultural colony.</p>
+              <div class="imperial-signature">Dom Pedro II</div>
+              <div class="date-stamp">1843</div>
             </div>
+            <div class="scroll-edges">
+              <div class="scroll-edge-left"></div>
+              <div class="scroll-edge-right"></div>
+            </div>
+          </div>
         </div>
+
+        <!-- Pergaminho 2 -->
+        <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+          <div class="scroll-closed-inner">
+            <div class="scroll-border-pattern">
+              <div class="scroll-corner scroll-corner-tl"></div>
+              <div class="scroll-corner scroll-corner-tr"></div>
+              <div class="scroll-corner scroll-corner-bl"></div>
+              <div class="scroll-corner scroll-corner-br"></div>
+            </div>
+            <div class="scroll-title">Imperial Apogee</div>
+            <div class="imperial-seal"></div>
+            <div class="imperial-ribbon"></div>
+          </div>
+          <div class="scroll-open-inner" style="display: none;">
+            <div class="scroll-header">
+              <div class="scroll-title">Imperial Apogee</div>
+              <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="scroll-content">
+              <div class="imperial-emblem"></div>
+              <div class="scroll-image-container">
+                <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100%" height="100%" fill="#f5ebd0" />
+                  <!-- Salão de baile -->
+                  <rect x="30" y="50" width="140" height="100" fill="#d4c19c" />
+                  <!-- Colunas -->
+                  <rect x="40" y="50" width="10" height="100" fill="#a38d5d" />
+                  <rect x="80" y="50" width="10" height="100" fill="#a38d5d" />
+                  <rect x="120" y="50" width="10" height="100" fill="#a38d5d" />
+                  <rect x="160" y="50" width="10" height="100" fill="#a38d5d" />
+                  <!-- Teto ornamentado -->
+                  <path d="M30 50 Q100 30 170 50" fill="none" stroke="#3a2e1c" stroke-width="2" />
+                  <!-- Lustre -->
+                  <path d="M100 30 L100 60" stroke="#a38d5d" stroke-width="2" />
+                  <circle cx="100" cy="70" r="10" fill="none" stroke="#a38d5d" stroke-width="1" />
+                  <!-- Figuras dançando -->
+                  <circle cx="70" cy="120" r="8" fill="#3a2e1c" />
+                  <rect x="67" y="128" width="6" height="15" fill="#3a2e1c" />
+                  <circle cx="90" cy="120" r="8" fill="#8c2c2c" />
+                  <path d="M90 128 L90 143" stroke="#8c2c2c" stroke-width="6" />
+                  <circle cx="130" cy="120" r="8" fill="#3a2e1c" />
+                  <rect x="127" y="128" width="6" height="15" fill="#3a2e1c" />
+                  <circle cx="150" cy="120" r="8" fill="#8c2c2c" />
+                  <path d="M150 128 L150 143" stroke="#8c2c2c" stroke-width="6" />
+                </svg>
+              </div>
+              <p class="scroll-text">During the Second Empire, Petrópolis reached its peak as the political and cultural
+                center of the Empire. The Imperial Palace became the official summer residence of the royal family,
+                attracting the country's political and aristocratic elite. The city was known as the "Brazilian
+                Versailles" due to its sophistication.</p>
+              <div class="imperial-signature">Princess Isabel</div>
+              <div class="date-stamp">1870</div>
+            </div>
+            <div class="scroll-edges">
+              <div class="scroll-edge-left"></div>
+              <div class="scroll-edge-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pergaminho 3 -->
+        <div class="scroll scroll-closed" onclick="toggleScroll(this)">
+          <div class="scroll-closed-inner">
+            <div class="scroll-border-pattern">
+              <div class="scroll-corner scroll-corner-tl"></div>
+              <div class="scroll-corner scroll-corner-tr"></div>
+              <div class="scroll-corner scroll-corner-bl"></div>
+              <div class="scroll-corner scroll-corner-br"></div>
+            </div>
+            <div class="scroll-title">Contemporary Petropolis</div>
+            <div class="imperial-seal"></div>
+            <div class="imperial-ribbon"></div>
+          </div>
+          <div class="scroll-open-inner" style="display: none;">
+            <div class="scroll-header">
+              <div class="scroll-title">Contemporary Petropolis</div>
+              <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10L12 15L17 10" stroke="#3a2e1c" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="scroll-content">
+              <div class="imperial-emblem"></div>
+              <div class="scroll-image-container">
+                <svg class="scroll-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100%" height="100%" fill="#f5ebd0" />
+                  <!-- Catedral de São Pedro de Alcântara -->
+                  <rect x="60" y="60" width="80" height="90" fill="#d4c19c" />
+                  <path d="M60 60 L100 30 L140 60" fill="#a38d5d" />
+                  <!-- Torres -->
+                  <rect x="70" y="40" width="10" height="30" fill="#a38d5d" />
+                  <path d="M70 40 L75 30 L80 40" fill="#a38d5d" />
+                  <rect x="120" y="40" width="10" height="30" fill="#a38d5d" />
+                  <path d="M120 40 L125 30 L130 40" fill="#a38d5d" />
+                  <!-- Porta e janelas -->
+                  <rect x="90" y="110" width="20" height="40" fill="#3a2e1c" />
+                  <path d="M90 110 L100 100 L110 110" fill="#3a2e1c" />
+                  <rect x="70" y="80" width="15" height="20" fill="#3a2e1c" />
+                  <path d="M70 80 L77.5 70 L85 80" fill="#3a2e1c" />
+                  <rect x="115" y="80" width="15" height="20" fill="#3a2e1c" />
+                  <path d="M115 80 L122.5 70 L130 80" fill="#3a2e1c" />
+                  <!-- Praça -->
+                  <rect x="40" y="150" width="120" height="20" fill="#a38d5d" />
+                  <!-- Pessoas -->
+                  <circle cx="60" cy="160" r="3" fill="#3a2e1c" />
+                  <circle cx="70" cy="160" r="3" fill="#8c2c2c" />
+                  <circle cx="130" cy="160" r="3" fill="#3a2e1c" />
+                  <circle cx="140" cy="160" r="3" fill="#8c2c2c" />
+                </svg>
+              </div>
+              <p class="scroll-text">Today, Petrópolis keeps its historical heritage alive while developing as an
+                important tourist, technological and educational center. The Historic Center, listed by IPHAN, preserves
+                the original layout and buildings from the imperial period, attracting visitors from all over the world.
+              </p>
+              <div class="imperial-signature">Municipal Registry Office</div>
+              <div class="date-stamp">2023</div>
+            </div>
+            <div class="scroll-edges">
+              <div class="scroll-edge-left"></div>
+              <div class="scroll-edge-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
 
 
 
 
 
-<script src="js/culinary.js"></script>
-<script src="js/history.js"></script>
+  <!-- Tourism Section -->
+  <section id="tourism" style="background: linear-gradient(to bottom, #1d1d1d, #252525, #2e2e2e, #383838);"
+    class="relative z-10 text-gray-200 py-24 px-0 overflow-hidden">
+    <div class="dust-particles"></div>
+    <div class="w-full">
+      <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37] text-center">TOURISM</h2>
+      <div class="w-full h-px mx-auto mt-12 opacity-15 mb-10 bg-[#D4AF37]"></div>
+      <div class="relative w-full overflow-hidden">
+        <div id="carousel-scroll" class="flex w-max gap-4 px-0 animate-carousel">
+          <!-- Conteúdo duplicado para looping infinito -->
+          <div class="flex gap-4" id="carousel-track">
+            <!-- Itens duplicados para efeito de loop -->
+            <template id="carousel-items">
+              <div
+                class="w-[250px] shrink-0 relative group rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-90">
+                <img src="assets/image/museu.webp" alt="Palácio" class="w-full h-64 object-cover" />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                  <span class="text-[#D4AF37] font-semibold text-lg">Palácio Rio Negro</span>
+                </div>
+              </div>
+              <div
+                class="w-[250px] shrink-0 relative group rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-90">
+                <img src="assets/image/museu.webp" alt="Museu Imperial" class="w-full h-64 object-cover" />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                  <span class="text-[#D4AF37] font-semibold text-lg">Museu Imperial</span>
+                </div>
+              </div>
+              <div
+                class="w-[250px] shrink-0 relative group rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-90">
+                <img src="assets/image/museu.webp" alt="Catedral" class="w-full h-64 object-cover" />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                  <span class="text-[#D4AF37] font-semibold text-lg">Catedral São Pedro</span>
+                </div>
+              </div>
+              <div
+                class="w-[250px] shrink-0 relative group rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-90">
+                <img src="assets/image/museu.webp" alt="Montanhas" class="w-full h-64 object-cover" />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                  <span class="text-[#D4AF37] font-semibold text-lg">Vista da Serra</span>
+                </div>
+              </div>
+              <div
+                class="w-[250px] shrink-0 relative group rounded-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-90">
+                <img src="assets/image/museu.webp" alt="Centro Histórico" class="w-full h-64 object-cover" />
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+                  <span class="text-[#D4AF37] font-semibold text-lg">Centro Histórico</span>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-px mx-auto mt-12 opacity-15 mb-10 bg-[#D4AF37]"></div>
+  </section>
+
+
+  <script src="js/culinary.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/tourism.js"></script>
   <script>
     lucide.createIcons();
   </script>
 
-  
+
 </body>
 
 </html>
