@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petrópolis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(to bottom, #000000, #111111, #1a1a1a);
+    }
+    .title-font {
+      font-family: 'Playfair Display SC', serif;
+    }
+    .subtitle-font {
+      font-family: 'Ink Free', cursive;
+    }
+    .text-3d-shadow {
+      color: white;
+      position: relative;
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 0 #555,
+        6px 6px 0 rgba(0, 0, 0, 0.4);
+    }
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 25;
+      opacity: 0.3;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .floating-food {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: floatFood 20s linear infinite;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes floatFood {
+      0% { transform: translateY(100vh) translateX(0); }
+      100% { transform: translateY(-100vh) translateX(50vw); }
+    }
+    .floating-history {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff5;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: floatDust 30s linear infinite;
+    z-index: 0;
+  }
+
+  .open-scroll {
+    transform: scaleY(0.8) rotateX(90deg);
+    transform-origin: top;
+    transition: transform 1s ease;
+    opacity: 0;
+  }
+
+  .open-scroll.open {
+    transform: scaleY(1) rotateX(0deg);
+    opacity: 1;
+  }
+  </style>
+</head>
+
+<body class="text-white">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-sm text-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center h-12">
+      <nav class="space-x-8 flex items-center">
+        <a href="#home" class="hover:text-[#D4AF37] transition-colors flex items-center space-x-1">
+          <i data-lucide="home" class="w-4 h-4 nav-icon"></i>
+          <span>Home</span>
+        </a>
+        <a href="#cuisine" class="hover:text-[#D4AF37] transition-colors flex items-center space-x-1">
+          <i data-lucide="utensils" class="w-4 h-4 nav-icon"></i>
+          <span>Cuisine</span>
+        </a>
+        <a href="#history" class="hover:text-[#D4AF37] transition-colors flex items-center space-x-1">
+          <i data-lucide="book-open" class="w-4 h-4 nav-icon"></i>
+          <span>History</span>
+        </a>
+        <a href="#tourism" class="hover:text-[#D4AF37] transition-colors flex items-center space-x-1">
+          <i data-lucide="map" class="w-4 h-4 nav-icon"></i>
+          <span>Tourism</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Hero -->
+  <section id="home" class="relative h-screen w-full overflow-hidden">
+    <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop>
+      <source src="assets/video-petropolis.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-20"></div>
+    <div class="relative z-30 flex items-center justify-center flex-col h-full text-center px-4 -mt-12">
+      <h1 class="text-6xl md:text-[5rem] font-bold title-font uppercase tracking-widest mb-4 text-3d-shadow">PETRÓPOLIS</h1>
+      <p class="text-white text-lg md:text-base font-extrabold uppercase tracking-wider mb-10" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">- A CITY IN RIO DE JANEIRO -</p>
+    </div>
+  </section>
+
+  <!-- Cuisine Section -->
+  <section id="cuisine" class="relative z-10 bg-[#0d0d0d] text-gray-200 py-20 px-6 overflow-hidden">
+    <div id="food-animation"></div>
+    <div class="max-w-6xl mx-auto text-center fade-in">
+      <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">CULINÁRIA | GASTRONOMY</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+          <i data-lucide="utensils" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
+          <h3 class="text-xl font-semibold mb-2">Pratos Salgados</h3>
+          <p class="text-sm text-gray-400">Joelho de porco, salsichas, truta e fondue no inverno.</p>
+        </div>
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+          <i data-lucide="cake" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
+          <h3 class="text-xl font-semibold mb-2">Doces & Sobremesas</h3>
+          <p class="text-sm text-gray-400">Apfelstrudel, chocolates e bolos alemães.</p>
+        </div>
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+          <i data-lucide="wine" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
+          <h3 class="text-xl font-semibold mb-2">Bebidas & Festas</h3>
+          <p class="text-sm text-gray-400">Cervejas artesanais, chá imperial e Bauernfest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- History Section -->
+<section id="history" class="relative z-10 bg-[#1c1c1c] text-gray-200 py-24 px-6 overflow-hidden">
+  <div id="history-particles"></div>
+  <div class="max-w-6xl mx-auto text-center fade-in">
+    <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">HISTÓRIA | HISTORY</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Card 1 -->
+      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
+        <img src="assets/paper-texture.png" alt="Período Imperial" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
+          <i data-lucide="crown" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
+          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Período Imperial</h3>
+          <p class="text-sm text-[#4d3e2a] text-center">Dom Pedro II usava a cidade como residência de verão.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
+        <img src="assets/paper-texture.png" alt="Cultura Alemã" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
+          <i data-lucide="scroll-text" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
+          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Cultura Alemã</h3>
+          <p class="text-sm text-[#4d3e2a] text-center">Imigrantes alemães influenciaram a arquitetura e culinária.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative w-full open-scroll fade-in" style="height: 26rem;">
+        <img src="assets/paper-texture.png" alt="Herança Arquitetônica" class="absolute inset-0 w-full h-full object-contain z-0 pointer-events-none" />
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10">
+          <i data-lucide="building-2" class="w-12 h-12 mb-3 text-[#D4AF37]"></i>
+          <h3 class="text-xl font-semibold mb-1 text-[#3b2f1d]">Herança Arquitetônica</h3>
+          <p class="text-sm text-[#4d3e2a] text-center">Casarões, palácios e ruas que lembram a Europa do século XIX.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    lucide.createIcons();
+
+    const foodContainer = document.getElementById("food-animation");
+    const foodEmojis = ['\uD83C\uDF7D️', '\uD83C\uDF54', '\uD83C\uDF5D', '\uD83E\uDD5C', '\uD83E\uDD57'];
+
+    for (let i = 0; i < 20; i++) {
+      const el = document.createElement("div");
+      el.className = "floating-food";
+      el.style.left = `${Math.random() * 100}%`;
+      el.style.top = `${Math.random() * 100}%`;
+      el.style.fontSize = `${Math.random() * 20 + 20}px`;
+      el.textContent = foodEmojis[Math.floor(Math.random() * foodEmojis.length)];
+      foodContainer.appendChild(el);
+    }
+
+    const faders = document.querySelectorAll('.fade-in');
+
+    function triggerAnimation(element) {
+      element.classList.remove('show');
+      void element.offsetWidth;
+      setTimeout(() => {
+        element.classList.add('show');
+      }, 10);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          triggerAnimation(entry.target);
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => observer.observe(fader));
+
+
+    const historyContainer = document.getElementById("history-particles");
+  for (let i = 0; i < 20; i++) {
+    const dot = document.createElement("div");
+    dot.className = "floating-history";
+    dot.style.left = `${Math.random() * 100}%`;
+    dot.style.top = `${Math.random() * 100}%`;
+    dot.style.width = `${Math.random() * 10 + 5}px`;
+    dot.style.height = dot.style.width;
+    dot.style.backgroundColor = `rgba(255, 248, 220, ${Math.random() * 0.2 + 0.1})`;
+    dot.style.animationDuration = `${20 + Math.random() * 20}s`;
+    historyContainer.appendChild(dot);
+  }
+
+  // Scroll observer for opening animation
+  const openCards = document.querySelectorAll('.open-scroll');
+  const openObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('open');
+      } else {
+        entry.target.classList.remove('open');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  openCards.forEach(card => openObserver.observe(card));
+  </script>
+
+  <style>
+    @keyframes floatDust {
+      0% { transform: translate(0, 0); opacity: 0.1; }
+      20% { opacity: 0.3; }
+      50% { transform: translate(50px, -30px); opacity: 0.5; }
+      80% { opacity: 0.3; }
+      100% { transform: translate(100px, -60px); opacity: 0.1; }
+    }
+  </style>
+</body>
+
+</html>
