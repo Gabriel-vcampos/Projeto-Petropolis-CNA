@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Petrópolis</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Ink+Free&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/history.css">
   <link rel="stylesheet" href="css/banner.css">
@@ -20,7 +19,6 @@
       padding: 0;
       overflow-x: hidden;
       background: linear-gradient(to bottom, #000000, #0a0a0a, #111111, #151515, #1a1a1a);
-
     }
   </style>
 </head>
@@ -28,8 +26,8 @@
 <body class="text-white">
   <!-- Navbar -->
   <header class="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-sm text-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center h-12">
-      <nav class="space-x-8 flex items-center">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex justify-center items-center h-12">
+      <nav class="flex flex-wrap justify-center items-center gap-4 text-sm sm:text-base whitespace-nowrap overflow-x-auto">
         <a href="#home" class="hover:text-[#D4AF37] transition-colors flex items-center space-x-1">
           <i data-lucide="home" class="w-4 h-4 nav-icon"></i>
           <span>Home</span>
@@ -57,47 +55,33 @@
       Your browser does not support the video tag.
     </video>
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-20"></div>
-    <div class="relative z-30 flex items-center justify-center flex-col h-full text-center px-4 -mt-12">
-      <h1 class="text-6xl md:text-[5rem] font-bold title-font uppercase tracking-widest mb-4 text-3d-shadow">PETRÓPOLIS
-      </h1>
-      <p class="text-white text-lg md:text-base font-extrabold uppercase tracking-wider mb-10"
-        style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">- A CITY IN RIO DE JANEIRO -</p>
+    <div class="relative z-30 flex items-center justify-center flex-col h-full text-center px-2 sm:px-4 -mt-6 sm:-mt-12">
+      <h1 class="text-4xl sm:text-5xl md:text-[5rem] font-bold title-font uppercase tracking-widest mb-4 text-3d-shadow">PETRÓPOLIS</h1>
+      <p class="text-white text-base sm:text-lg md:text-base font-extrabold uppercase tracking-wider mb-10" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">- A CITY IN RIO DE JANEIRO -</p>
     </div>
   </section>
 
   <!-- Cuisine Section -->
-  <section id="cuisine" class="relative z-10 text-gray-200 py-20 px-6 overflow-hidden"
-    style="background: linear-gradient(to bottom, #0e0e0e, #161616);">
+  <section id="cuisine" class="relative z-10 text-gray-200 py-16 px-4 sm:px-6 overflow-hidden" style="background: linear-gradient(to bottom, #0e0e0e, #161616);">
     <div class="dust-particles"></div>
     <div id="food-animation"></div>
     <div class="max-w-6xl mx-auto text-center fade-in">
       <h2 class="text-4xl font-bold title-font mb-10 text-[#D4AF37]">CULINARY</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div
-          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="utensils" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
           <h3 class="text-xl font-semibold mb-2">Traditional Dishes</h3>
-          <p class="text-sm text-gray-400">Eisbein is a pork knee.
-            Bratwurst and Weisswurst that are German sausages.
-            fondue and
-            trout</p>
+          <p class="text-sm text-gray-400">Eisbein is a pork knee. Bratwurst and Weisswurst that are German sausages. fondue and trout</p>
         </div>
-        <div
-          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="cake" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
           <h3 class="text-xl font-semibold mb-2">Sweets and Desserts</h3>
-          <p class="text-sm text-gray-400">Apfelstrudel,
-            Black forest,
-            Custard,
-            Handmade Chocolates</p>
+          <p class="text-sm text-gray-400">Apfelstrudel, Black forest, Custard, Handmade Chocolates</p>
         </div>
-        <div
-          class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
+        <div class="flex flex-col items-center p-6 border border-gray-600 rounded-xl shadow-lg transition-all transform hover:scale-105 hover:border-[#D4AF37] group fade-in bg-[#151515]">
           <i data-lucide="wine" class="w-16 h-16 mb-4 text-[#D4AF37] group-hover:animate-bounce"></i>
           <h3 class="text-xl font-semibold mb-2">Common drinks</h3>
-          <p class="text-sm text-gray-400">Imperial afternoon tea,
-            craft beers,
-            hot chocolate on cold days</p>
+          <p class="text-sm text-gray-400">Imperial afternoon tea, craft beers, hot chocolate on cold days</p>
         </div>
       </div>
     </div>
