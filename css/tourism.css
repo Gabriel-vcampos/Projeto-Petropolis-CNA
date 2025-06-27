@@ -3,10 +3,10 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-33.3333%);
+      transform: translateX(-50%);
     }
   }
 
   .animate-carousel {
-    animation: carouselMove 45s linear infinite;
+    animation: carouselMove 40s linear infinite;
   }
